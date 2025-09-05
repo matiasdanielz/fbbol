@@ -97,8 +97,8 @@ export class BuyOrdersComponent {
     );
 
     // Fornecedor
-    doc.setFontSize(12);
-    doc.text(`Fornecedor: ${buyOrders.nomeFornecedor}`, marginLeft, lineY + 6);
+    doc.setFontSize(10);
+    doc.text(`Fornecedor: ${invoice.nomeFornecedor}`, marginLeft, lineY + 6);
 
     let startY = lineY + 15;
     const body: any[] = [];

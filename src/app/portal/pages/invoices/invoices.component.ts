@@ -92,7 +92,7 @@ export class InvoicesComponent implements OnInit {
     );
 
     // Fornecedor
-    doc.setFontSize(12);
+    doc.setFontSize(10);
     doc.text(`Fornecedor: ${invoice['nomeFornecedor']}`, marginLeft, lineY + 6);
   
     let startY = lineY + 15;
