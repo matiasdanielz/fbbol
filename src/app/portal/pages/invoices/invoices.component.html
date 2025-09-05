@@ -1,0 +1,60 @@
+<app-page-default pageTitle="Notas De Entrada">
+  <app-card-default>
+
+    <!-- Campo de filtro -->
+    <div class="p-mb-3">
+      <input 
+        pInputText 
+        type="text" 
+        placeholder="🔍 Filtrar notas..." 
+        [(ngModel)]="filtro" 
+        (input)="filtrarNotas()" 
+        class="p-inputtext-sm" 
+        style="width: 300px" />
+    </div>
+
+    <p-table
+      [value]="invoicesFiltradas"
+      [scrollable]="true"
+      scrollHeight="75vh"
+      [tableStyle]="{'min-width': '60rem'}">
+
+      <!-- Cabeçalho -->
+      <ng-template pTemplate="header">
+        <tr>
+          <th>Ações</th>
+          <th>Código da Nota</th>
+          <th>Fornecedor</th>
+          <th>Tipo</th>
+          <th>Produtos Vendidos</th>
+        </tr>
+      </ng-template>
+
+      <!-- Linhas -->
+      <ng-template pTemplate="body" let-invoice>
+        <tr>
+          <td>
+            <button 
+              pButton 
+              type="button" 
+              label="Baixar" 
+              class="p-button-sm p-button-secondary"
+              (click)="baixarPdf(invoice)">
+            </button>
+          </td>
+          <td>{{ invoice.codigo }}</td>
+          <td>{{ invoice.nomeFornecedor }}</td>
+          <td>
+            <p-badge 
+              [value]="getTipoLabel(invoice.tipo)" 
+              [severity]="getTipoSeverity(invoice.tipo)">
+            </p-badge>
+          </td>
+          <td>{{ invoice.produtosVendidos }}</td>
+        </tr>
+      </ng-template>
+    </p-table>
+  </app-card-default>
+</app-page-default>
+
+<app-loading-overlay-default *ngIf="isLoading"></app-loading-overlay-default>

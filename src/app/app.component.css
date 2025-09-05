@@ -1,0 +1,26 @@
+/* Container principal: ocupa toda a altura da viewport */
+.layout-container {
+    display: flex;
+    flex-direction: row;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden; /* evita scroll horizontal */
+}
+
+/* Conteúdo principal: ocupa o restante da largura */
+.content-area {
+    flex: 1; /* ocupa todo o espaço restante */
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow-y: auto; /* scroll vertical se necessário */
+    background-color: #f5f5f5; /* fundo neutro, opcional */
+}
+
+/* Ajusta componentes internos para preencher o content-area */
+.content-area app-page-default {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-height: 0; /* importante para permitir scroll interno */
+}

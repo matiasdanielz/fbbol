@@ -1,0 +1,51 @@
+<app-page-default pageTitle="Faturas Comerciais">
+    <app-card-default>
+  
+      <!-- Campo de filtro -->
+      <div class="p-mb-3">
+        <input 
+          pInputText 
+          type="text" 
+          placeholder="🔍 Filtrar faturas..." 
+          [(ngModel)]="filtro" 
+          (input)="filtrarFaturas()" 
+          class="p-inputtext-sm" 
+          style="width: 300px" />
+      </div>
+  
+      <p-table
+        [value]="buyOrdersFiltradas"
+        [scrollable]="true"
+        scrollHeight="75vh"
+        [tableStyle]="{'min-width': '60rem'}">
+  
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Código da Ordem</th>
+            <th>Produtos Vendidos</th>
+            <th>Ações</th>
+          </tr>
+        </ng-template>
+  
+        <ng-template pTemplate="body" let-invoice>
+          <tr>
+            <td>{{ invoice.codigo }}</td>
+            <td>{{ invoice.produtosVendidos }}</td>
+            <td>
+              <button
+                pButton
+                type="button"
+                label="Baixar PDF"
+                class="p-button-sm p-button-secondary"
+                (click)="baixarPdf(invoice)">
+              </button>
+            </td>
+          </tr>
+        </ng-template>
+  
+      </p-table>
+    </app-card-default>
+  </app-page-default>
+  
+  <app-loading-overlay-default *ngIf="isLoading"></app-loading-overlay-default>
+  

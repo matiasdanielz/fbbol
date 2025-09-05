@@ -1,0 +1,19 @@
+.card {
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 8px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin-top: 15px;
+  
+    /* Limita a altura do card */
+    height: 90vh;
+  
+    /* Permite scroll interno se conteúdo exceder */
+    overflow: auto;
+  
+    box-sizing: border-box;
+  }
+  
+  

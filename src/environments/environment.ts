@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  useRestApi: true,
+  apiDomain: 'https://coobrasturviagens143632.protheus.cloudtotvs.com.br:1807/rest/SuperTela',
+  apiCredentials: 'basic YWRtaW46Q29vYis'
 };
 
 /*

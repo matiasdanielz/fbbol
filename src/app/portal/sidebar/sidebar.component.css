@@ -1,0 +1,110 @@
+/* Container principal */
+.layout-container {
+    display: flex;
+    height: 100vh;
+    flex-direction: row;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Menu lateral: 35% da largura, altura total */
+.menu-sidebar {
+    flex: 0 0 35%;
+    height: 100%;
+    display: flex;
+    box-shadow: 3px 0 8px rgba(0, 0, 0, 0.1);
+    border-radius: 0 15px 15px 0;
+    overflow: hidden;
+}
+
+/* Base do menu */
+.menu-sidebar ::ng-deep .p-menu {
+    background: #4169E1;
+    /* degrade azul suave */
+    border: none;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+}
+
+/* Header do menu */
+.menu-header {
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.5rem;
+    height: 100px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    color: #ffffff;
+    gap: 0.5rem;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+/* Container de itens do menu */
+.menu-items-container {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5rem; /* espaço interno do menu */
+    transition: all 0.3s ease;
+}
+
+/* Hover apenas em containers que não estão ativos */
+.menu-items-container:not(.active-container):hover {
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateX(5px);
+}
+
+/* Container ativo */
+.menu-items-container.active-container {
+    background: #4169E1;
+}
+
+
+/* Itens do menu */
+.menu-item {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    color: #e0e0e0;
+    font-weight: 600;
+    font-size: 18px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    background: transparent; /* garante que todo o item fique consistente */
+}
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+    color: black;
+    transform: translateX(5px);
+}
+
+/* Itens ativos */
+.menu-item.active {
+    background: #003a79;
+    color: white;
+}
+
+/* Hover em itens ativos (opcional: muda levemente ou mantém) */
+.menu-item.active:hover {
+    background: #003a79; /* mantém cor do ativo */
+    transform: none;      /* remove o efeito de deslocamento */
+}
+
+
+/* Footer */
+.menu-footer {
+    margin-top: auto;
+    padding: 1rem 1.5rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.menu-footer .p-button-danger {
+    width: 90%;
+    font-weight: bold;
+    border-radius: 10px;
+    border: none;
+    transition: all 0.3s ease;
+}
